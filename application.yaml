@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: dev-argocd-app
+  name: dev-default-app
   namespace: argocd
 spec:
   project: default
@@ -11,7 +11,7 @@ spec:
     path: overlays/dev
   destination:
     server: "https://kubernetes.default.svc"
-    namespace: '*'
+    namespace: default
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
